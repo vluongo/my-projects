@@ -1,0 +1,6 @@
+@ChoirAdminApp_HostAddress = http://localhost:5124
+
+GET {{ChoirAdminApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

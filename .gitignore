@@ -1,0 +1,31 @@
+# Solution-wide ignores
+.vs/
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# ChoirAdminApp project artifacts
+ChoirAdminApp/bin/
+ChoirAdminApp/obj/
+ChoirAdminApp/publish/
+
+# IDE & tooling
+.vscode/
+.idea/
+
+# User secrets & configs
+ChoirAdminApp/secrets.json
+ChoirAdminApp/appsettings.Development.json
+ChoirAdminApp/appsettings.Local.json
+ChoirAdminApp/appsettings.*.json
+!ChoirAdminApp/appsettings.Template.json   # keep a safe template
+
+# EF Core migrations (optional snapshots)
+ChoirAdminApp/Migrations/*Designer.cs
+ChoirAdminApp/Migrations/*Snapshot.cs
+
+# Test & coverage
+ChoirAdminApp/TestResults/
+ChoirAdminApp/coverage/
