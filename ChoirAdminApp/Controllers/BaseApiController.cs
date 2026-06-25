@@ -53,14 +53,22 @@ namespace ChoirAdminApp.Controllers
 		// Convenience wrappers
 		protected ActionResult<T> NotFoundProblem<T>(string detail = null)
 			=> ProblemResult<T>(StatusCodes.Status404NotFound, "Entity not found", detail);
-
 		protected ActionResult NotFoundProblem(string detail = null)
 			=> ProblemResult(StatusCodes.Status404NotFound, "Entity not found", detail);
 
 		protected ActionResult<T> ConflictProblem<T>(string detail = null)
 			=> ProblemResult<T>(StatusCodes.Status409Conflict, "Conflict occurred", detail);
-
 		protected ActionResult ConflictProblem(string detail = null)
 			=> ProblemResult(StatusCodes.Status409Conflict, "Conflict occurred", detail);
+		
+		protected ActionResult<T> BadRequestProblem<T>(string detail = null)
+		=> ProblemResult<T>(StatusCodes.Status400BadRequest, "Invalid request", detail);
+		protected ActionResult BadRequestProblem(string detail = null)
+		=> ProblemResult(StatusCodes.Status400BadRequest, "Invalid request", detail);
+
+		protected ActionResult<T> UnauthorizedProblem<T>(string detail = null)
+		=> ProblemResult<T>(StatusCodes.Status401Unauthorized, "Unauthorized", detail);
+		protected ActionResult UnauthorizedProblem(string detail = null)
+		=> ProblemResult(StatusCodes.Status401Unauthorized, "Unauthorized", detail);
 	}
 }
