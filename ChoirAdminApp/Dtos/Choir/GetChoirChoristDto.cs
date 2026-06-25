@@ -1,6 +1,6 @@
 ﻿using ChoirAdminApp.Models;
 
-namespace ChoirAdminApp.Dtos
+namespace ChoirAdminApp.Dtos.Choir
 {
 	public class GetChoirChoristDto
 	{

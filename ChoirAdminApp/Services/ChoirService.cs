@@ -1,5 +1,5 @@
 ﻿using ChoirAdminApp.Data;
-using ChoirAdminApp.Dtos;
+using ChoirAdminApp.Dtos.Choir;
 using ChoirAdminApp.Models;
 using Microsoft.EntityFrameworkCore;
 

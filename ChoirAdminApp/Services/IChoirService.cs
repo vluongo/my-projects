@@ -1,4 +1,4 @@
-﻿using ChoirAdminApp.Dtos;
+﻿using ChoirAdminApp.Dtos.Choir;
 
 namespace ChoirAdminApp.Services
 {

@@ -1,5 +1,6 @@
 ﻿using ChoirAdminApp.Data;
 using ChoirAdminApp.Dtos;
+using ChoirAdminApp.Dtos.Director;
 using ChoirAdminApp.Exceptions;
 using ChoirAdminApp.Helpers;
 using ChoirAdminApp.Models;
@@ -11,8 +12,6 @@ namespace ChoirAdminApp.Services
 {
 	public class DirectorService(AppDbContext context, ILogger<DirectorService> logger) : IDirectorService
 	{
-		//	TODO:
-		//	add authentication & authorization (remember to move appsettings)
 
 		public async Task<GetDirectorDto> AddDirector(PostDirectorDto request)
 		{

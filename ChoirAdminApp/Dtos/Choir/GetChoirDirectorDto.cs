@@ -1,10 +1,9 @@
-﻿namespace ChoirAdminApp.Dtos
+﻿namespace ChoirAdminApp.Dtos.Choir
 {
-	public class GetDirectorDto
+	public class GetChoirDirectorDto
 	{
 		public Guid Id { get; set; }
 		public string Name { get; set; } = string.Empty;
 		public DateTime Birthdate { get; set; }
-		public List<GetDirectorChoirDto> Choirs { get; set; }
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using ChoirAdminApp.Dtos;
-using ChoirAdminApp.Models;
+using ChoirAdminApp.Dtos.Director;
 
 namespace ChoirAdminApp.Services
 {

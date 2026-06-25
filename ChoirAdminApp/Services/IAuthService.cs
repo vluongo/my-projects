@@ -8,6 +8,5 @@ namespace ChoirAdminApp.Services
 		Task<GetUserDto?> RegisterAsync(PostUserDto request);
 		Task<TokenResponseDto?> Login(PostUserDto request);
 		Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request);
-		//	TODO: add roles management
 	}
 }

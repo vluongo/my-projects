@@ -1,4 +1,4 @@
-﻿namespace ChoirAdminApp.Dtos
+﻿namespace ChoirAdminApp.Dtos.Director
 {
 	public class GetDirectorChoirDto
 	{

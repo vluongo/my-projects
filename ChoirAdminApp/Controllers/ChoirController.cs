@@ -1,4 +1,4 @@
-﻿using ChoirAdminApp.Dtos;
+﻿using ChoirAdminApp.Dtos.Choir;
 using ChoirAdminApp.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
