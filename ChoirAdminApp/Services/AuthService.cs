@@ -1,4 +1,5 @@
-﻿using ChoirAdminApp.Data;
+﻿using ChoirAdminApp.Constants;
+using ChoirAdminApp.Data;
 using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Exceptions;
 using ChoirAdminApp.Models;
@@ -102,11 +103,11 @@ namespace ChoirAdminApp.Services
 
 				// 2. Lookup default role (e.g. "Member")
 				var defaultRole = await context.Roles
-					.FirstOrDefaultAsync(r => r.RoleName == "Reader");
+					.FirstOrDefaultAsync(r => r.RoleName == RoleNames.Read);
 
 				if (defaultRole == null)
 				{
-					throw new DefaultRoleNotFoundException("Default role 'Reader' not found.");
+					throw new DefaultRoleNotFoundException("Default role 'Read' not found.");
 				}
 
 				// 3. Assign role to user
