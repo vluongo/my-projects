@@ -1,7 +1,9 @@
 ﻿using ChoirAdminApp.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Net;
+using System.Security.Cryptography;
 
 namespace ChoirAdminApp.Middleware
 {
@@ -62,6 +64,12 @@ namespace ChoirAdminApp.Middleware
 					problem.Status = (int)HttpStatusCode.Conflict;
 					break;
 
+				case DefaultRoleNotFoundException _:
+					problem.Type = "https://httpstatuses.com/404";
+					problem.Title = "Role not found";
+					problem.Status = (int)HttpStatusCode.NotFound;
+					break;
+
 				case DbUpdateConcurrencyException _:
 					problem.Type = "https://httpstatuses.com/409";
 					problem.Title = "Concurrency Conflict";
@@ -74,10 +82,22 @@ namespace ChoirAdminApp.Middleware
 					problem.Status = (int)HttpStatusCode.InternalServerError;
 					break;
 
+				case CryptographicException _:
+					problem.Type = "https://httpstatuses.com/500";
+					problem.Title = "Cryptographic error";
+					problem.Status = (int)HttpStatusCode.InternalServerError;
+					break;
+
 				case InvalidOperationException _:
 					problem.Type = "https://httpstatuses.com/400";
 					problem.Title = "Invalid Operation";
 					problem.Status = (int)HttpStatusCode.BadRequest;
+					break;
+
+				case SecurityTokenException _:
+					problem.Type = "https://httpstatuses.com/401";
+					problem.Title = "Unauthorized";
+					problem.Status = (int)HttpStatusCode.Unauthorized;
 					break;
 
 				default:
