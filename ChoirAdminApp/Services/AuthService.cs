@@ -14,24 +14,31 @@ using System.Text;
 
 namespace ChoirAdminApp.Services
 {
-	public class AuthService(AppDbContext context, IConfiguration configuration) : IAuthService
+	public class AuthService(AppDbContext context, IConfiguration configuration, ILogger<DirectorService> logger) : IAuthService
 	{
 		public async Task<TokenResponseDto?> Login(PostUserDto request)
 		{
+			logger.LogInformation("Login attempt for user {Username}", request.Username);
+
 			User? user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
 			if (user is null)
 			{
+				logger.LogWarning("Login failed: user {Username} not found", request.Username);
 				return null;
 			}
 
 			if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password)
 				== PasswordVerificationResult.Failed)
 			{
+				logger.LogWarning("Login failed: invalid password for user {Username}", request.Username);
 				return null;
 			}
 
 			string accessToken = await CreateToken(user);
 			var response = new TokenResponseDto { AccessToken = accessToken, RefreshToken = await RotateRefreshToken(user) };
+
+			logger.LogInformation("Login successful for user {UserId}", user.Id);
+
 			return response;
 		}
 
@@ -122,6 +129,16 @@ namespace ChoirAdminApp.Services
 
 				// 4. Commit transaction
 				await transaction.CommitAsync();
+
+				logger.LogInformation("User created in {@LogEntry}",
+				new
+				{
+					Operation = "AddUser",
+					user.Id,
+					Outcome = "Success",
+					Timestamp = DateTime.UtcNow
+				});
+
 				return new GetUserDto { Id = user.Id, Username = user.Username};
 
 			}
@@ -165,14 +182,21 @@ namespace ChoirAdminApp.Services
 
 		public async Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request)
 		{
+			logger.LogInformation("Refresh token attempt for user {UserId}", request.UserId);
+
 			var user = await ValidateRefreshTokenAsync(request.UserId, request.RefreshToken);
 			if (user is null)
 			{
+				logger.LogWarning("Invalid refresh token for user {UserId}", request.UserId);
 				return null;
 			}
 
 			string accessToken = await CreateToken(user);
-			return new TokenResponseDto { AccessToken = accessToken, RefreshToken = await RotateRefreshToken(user) };
+			var newToken = new TokenResponseDto { AccessToken = accessToken, RefreshToken = await RotateRefreshToken(user) };
+
+			logger.LogInformation("Refresh token successful for user {UserId}", request.UserId);
+
+			return newToken;
 		}
 
 		private async Task<User?> ValidateRefreshTokenAsync(Guid userId, string refreshToken)

@@ -42,10 +42,10 @@ namespace ChoirAdminApp.Services
 			context.Directors.Add(newDirector);
 			await context.SaveChangesAsync();
 
-			logger.LogInformation("Director updated {@LogEntry}",
+			logger.LogInformation("Director added {@LogEntry}",
 			new
 			{
-				Operation = "UpdateDirector",
+				Operation = "AddDirector",
 				newDirector.DirectorId,
 				Outcome = "Success",
 				Timestamp = DateTime.UtcNow
