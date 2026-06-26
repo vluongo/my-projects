@@ -22,4 +22,13 @@ It’s designed as a practice project to refresh modern .NET backend development
 - Azure-ready deployment configuration
 - ScalarUI
 
+## 🚀 Getting Started
 
+### Prerequisites
+- .NET 8 SDK
+- SQL Server or Azure SQL Database
+
+### Installation
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/choirs-api.git
