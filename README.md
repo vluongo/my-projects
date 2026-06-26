@@ -1,5 +1,5 @@
-# my-projects
-Personal projects repo
+A repo where I put personal projects to help me get reacquainted with the latest .NET technologíes. Currently working on Choirs API.
+
 
 # 🎶 Choirs API
 
@@ -24,11 +24,11 @@ It’s designed as a practice project to refresh modern .NET backend development
 
 ## 🚀 Getting Started
 
-### Prerequisites
+**Prerequisites**
 - .NET 8 SDK
 - SQL Server or Azure SQL Database
 
-### Installation
+**Installation**
 Clone the repository:
 ```bash
 git clone https://github.com/vluongo/my-projects.git
