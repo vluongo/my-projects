@@ -51,6 +51,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IDirectorService, DirectorService>();
 builder.Services.AddScoped<IChoirService, ChoirService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
 // Basic Serilog configuration
 Log.Logger = new LoggerConfiguration()
