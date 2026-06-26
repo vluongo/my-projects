@@ -31,7 +31,10 @@ It’s designed as a practice project to refresh modern .NET backend development
 ### Installation
 Clone the repository:
 ```bash
-git clone https://github.com/vluongo/my-projects.git
+git clone https://github.com/vluongo/my-projects.git```
 Run migrations:
 ```bash
-dotnet ef database update
+dotnet ef database update```
+Start the API:
+```bash
+dotnet run```
