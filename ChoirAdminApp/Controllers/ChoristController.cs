@@ -1,4 +1,5 @@
 ﻿using ChoirAdminApp.Constants;
+using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Dtos.Chorist;
 using ChoirAdminApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -10,9 +11,9 @@ namespace ChoirAdminApp.Controllers
 	[ApiController]
 	public class ChoristController(IChoristService service) : BaseApiController
 	{
-		/*[Authorize(Roles = $"{RoleNames.Read}, {RoleNames.Admin}")]
+		[Authorize(Roles = $"{RoleNames.Read}, {RoleNames.Admin}")]
 		[HttpGet]
-		public async Task<ActionResult<List<GetDirectorDto>>> GetChoirs([FromQuery] QueryParameters parameters) => Ok(await service.GetChoirs(parameters));*/
+		public async Task<ActionResult<List<GetChoristDto>>> GetChoirs([FromQuery] QueryParameters parameters) => Ok(await service.GetChorists(parameters));
 
 		[Authorize(Roles = $"{RoleNames.Read}, {RoleNames.Admin}")]
 		[HttpGet("{id}")]
@@ -30,20 +31,20 @@ namespace ChoirAdminApp.Controllers
 			return CreatedAtAction(nameof(GetChorist), new { id = createdChorist.Id }, createdChorist);
 		}
 
-		/*[Authorize(Roles = $"{RoleNames.Delete}, {RoleNames.Admin}")]
+		[Authorize(Roles = $"{RoleNames.Delete}, {RoleNames.Admin}")]
 		[HttpDelete("{id}")]
 		public async Task<ActionResult> DeleteChoir(Guid id)
 		{
-			var deleted = await service.DeleteChoir(id);
-			return deleted ? NoContent() : NotFoundProblem("Choir was not found");
+			var deleted = await service.DeleteChorist(id);
+			return deleted ? NoContent() : NotFoundProblem("Chorist was not found");
 		}
 
 		[Authorize(Roles = $"{RoleNames.Edit}, {RoleNames.Admin}")]
 		[HttpPut("{id}")]
-		public async Task<ActionResult> UpdateChoir(Guid id, PutChoirDto request)
+		public async Task<ActionResult> UpdateChoir(Guid id, PutChoristDto request)
 		{
-			var deleted = await service.UpdateChoir(id, request);
-			return deleted ? NoContent() : NotFoundProblem("Choir was not found");
-		}*/
+			var deleted = await service.UpdateChorist(id, request);
+			return deleted ? NoContent() : NotFoundProblem("Chorist was not found");
+		}
 	}
 }
