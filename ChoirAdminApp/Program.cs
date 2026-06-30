@@ -51,6 +51,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 																//.LogTo(Log.Information, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information));
 builder.Services.AddScoped<IDirectorService, DirectorService>();
 builder.Services.AddScoped<IChoirService, ChoirService>();
+builder.Services.AddScoped<IChoristService, ChoristService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
