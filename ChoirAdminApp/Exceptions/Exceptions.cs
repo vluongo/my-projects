@@ -9,4 +9,9 @@
 	{
 		public DefaultRoleNotFoundException(string message) : base(message) { }
 	}
+
+	public class DirectorNotFoundException : Exception
+	{
+		public DirectorNotFoundException(string message) : base(message) { }
+	}
 }
