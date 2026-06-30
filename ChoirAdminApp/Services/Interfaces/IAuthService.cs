@@ -1,7 +1,7 @@
 ﻿using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Models;
 
-namespace ChoirAdminApp.Services
+namespace ChoirAdminApp.Services.Interfaces
 {
 	public interface IAuthService
 	{

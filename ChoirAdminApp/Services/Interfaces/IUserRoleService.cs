@@ -1,6 +1,6 @@
 ﻿using ChoirAdminApp.Dtos.UserRole;
 
-namespace ChoirAdminApp.Services
+namespace ChoirAdminApp.Services.Interfaces
 {
 	public interface IUserRoleService
 	{

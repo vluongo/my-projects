@@ -1,7 +1,7 @@
 ﻿using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Dtos.Director;
 
-namespace ChoirAdminApp.Services
+namespace ChoirAdminApp.Services.Interfaces
 {
 	public interface IDirectorService
 	{
