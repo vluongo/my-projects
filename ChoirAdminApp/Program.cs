@@ -3,6 +3,7 @@ using ChoirAdminApp.Filters;
 using ChoirAdminApp.Middleware;
 using ChoirAdminApp.Models;
 using ChoirAdminApp.Services;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
