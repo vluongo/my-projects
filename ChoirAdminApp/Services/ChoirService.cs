@@ -107,7 +107,7 @@ namespace ChoirAdminApp.Services
 				new
 				{
 					Operation = "UpdateChoir",
-					DirectorId = id,
+					ChoirId = id,
 					Outcome = "NotFound",
 					Timestamp = DateTime.UtcNow
 				});
@@ -153,7 +153,7 @@ namespace ChoirAdminApp.Services
 						var newChorist = await context.Chorists.FindAsync(choristId);
 						if (newChorist is null)
 						{
-							throw new InvalidOperationException("At least one choir was not found.");
+							throw new InvalidOperationException("At least one chorist was not found.");
 						}
 
 						choirToUpdate.Chorists.Add(newChorist);
@@ -172,7 +172,7 @@ namespace ChoirAdminApp.Services
 			new
 			{
 				Operation = "UpdateChoir",
-				DirectorId = id,
+				ChoirId = id,
 				Outcome = "Success",
 				Timestamp = DateTime.UtcNow
 			});
