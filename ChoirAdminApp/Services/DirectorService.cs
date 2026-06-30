@@ -194,8 +194,8 @@ namespace ChoirAdminApp.Services
 				Birthdate = director.Birthdate
 			};
 
-			List<GetDirectorChoirDto> choirDtos = director.Choirs
-				.Select(c => new GetDirectorChoirDto
+			List<GetRelatedChoirDto> choirDtos = director.Choirs
+				.Select(c => new GetRelatedChoirDto
 				{
 					Name = c.Name,
 					Description = c.Description
