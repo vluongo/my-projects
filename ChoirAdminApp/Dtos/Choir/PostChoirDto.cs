@@ -1,6 +1,6 @@
 ﻿namespace ChoirAdminApp.Dtos.Choir
 {
-	public class SetChoirDto
+	public class PostChoirDto
 	{
 		public string Name { get; set; } = string.Empty;
 		public string Description { get; set; } = string.Empty;
