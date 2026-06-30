@@ -4,6 +4,7 @@ using ChoirAdminApp.Dtos.Director;
 using ChoirAdminApp.Exceptions;
 using ChoirAdminApp.Helpers;
 using ChoirAdminApp.Models;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;

@@ -1,5 +1,5 @@
 ﻿using ChoirAdminApp.Dtos;
-using ChoirAdminApp.Services;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChoirAdminApp.Controllers

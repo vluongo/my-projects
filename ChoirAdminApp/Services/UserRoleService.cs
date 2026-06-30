@@ -1,6 +1,7 @@
 ﻿using ChoirAdminApp.Data;
 using ChoirAdminApp.Dtos.UserRole;
 using ChoirAdminApp.Models;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChoirAdminApp.Services

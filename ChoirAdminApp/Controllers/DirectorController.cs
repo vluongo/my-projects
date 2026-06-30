@@ -1,7 +1,7 @@
 ﻿using ChoirAdminApp.Constants;
 using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Dtos.Director;
-using ChoirAdminApp.Services;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

@@ -3,6 +3,7 @@ using ChoirAdminApp.Data;
 using ChoirAdminApp.Dtos;
 using ChoirAdminApp.Exceptions;
 using ChoirAdminApp.Models;
+using ChoirAdminApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
