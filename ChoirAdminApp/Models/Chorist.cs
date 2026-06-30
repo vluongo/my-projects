@@ -13,21 +13,10 @@ namespace ChoirAdminApp.Models
 		[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 		public DateTime Birthdate { get; set; }
 
+		[Required]
 		[EnumDataType(typeof(ChordEnum))]
 		public ChordEnum Chord { get; set; }
-		[Required]
-		public virtual int ChordId
-		{
-			get
-			{
-				return (int)this.Chord;
-			}
-			set
-			{
-				Chord = (ChordEnum)value;
-			}
-		}
-		public string FavouriteFood { get; set; } = string.Empty;
+		public string? FavouriteFood { get; set; } = string.Empty;
 
 		public ICollection<Choir> Choirs { get; set; } = new List<Choir>();
 	}
